@@ -1,0 +1,25 @@
+Pruebas de Ruta Básica:
+Estas pruebas verifican que las rutas principales del servidor respondan correctamente.
+
+Ruta Principal (/): Verifica que la ruta principal responda con un código de estado 200.
+Ruta No Definida: Verifica que una ruta no definida responda con un código de estado 404.
+
+Pruebas de Cobertura de Decisiones y Condiciones:
+Estas pruebas verifican que todas las decisiones y condiciones en el código se ejecutan correctamente.
+
+-Prueba de creación de producto con manejo de errores: Verifica que se manejen correctamente los errores al intentar crear un producto.
+-Prueba de actualización de producto: Verifica que un producto se actualice correctamente.
+-Prueba de manejo de producto no existente: Verifica que se maneje correctamente el caso en que el producto a actualizar no existe.
+
+Pruebas de Flujo de Datos:
+Estas pruebas verifican el estado de las variables en diferentes puntos del flujo de datos.
+
+-Asignación de valores al crear un producto: Verifica que los valores de las variables se asignen correctamente al crear un producto.
+-Asignación de valores al actualizar un producto: Verifica que los valores de las variables se asignen correctamente al actualizar un producto.
+
+Dependencias:
+npm install --save-dev jest supertest mongoose
+
+levantar pruebas:
+npm install
+npm test
