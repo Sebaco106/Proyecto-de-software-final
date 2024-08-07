@@ -1,0 +1,29 @@
+REGISTRO DE EMPLEADOS
+DADO que el empleado llenó el formulario CUANDO registra sus datos 
+y deje uno o mas campos no obligatorios ENTONCES el sistema debe registrar sin problemas
+
+DADO que el empleado llenó el formulario CUANDO da en aceptar con datos exactos a uno anterior
+ENTONCES el sistema mandara un mensaje de error y pedirá otro intento
+
+DADO que el empleado llenó el formulario CUANDO acepte dejando el numero vacío, con caracteres
+incompletos o no válidos ENTONCES el sistema debe mandar un mensaje de que debe completar el numero
+
+DADO que el empleado está llenando el formulario CUANDO cierra todo el sistema ENTONCES 
+el sistema vuelve a iniciar en la pagina inicial y se borra lo que escribió en el formulario
+
+DADO que el empleado está llenando el formulario CUANDO ingrese los valores "_" o "/" en 
+el campo de nombres ENTONCES el sistema los convierte como un espacio en 
+blanco como la barra espaciadora
+
+DADO que el empleado llenó algo del formulario CUANDO acepte dejando vacío uno o más campos 
+obligatorios ENTONCES el sistema manda un mensaje de error para que los llene
+
+REGISTRO DE PRODUCTOS
+
+DADO que el empleado llenó el formulario CUANDO elija el tipo de producto ENTONCES al final del nombre del producto se 
+registra con un ID referido al tipo entre paréntesis (tipo) , los tipos son: periféricos (PR) , repuestos 
+de laptop y computadoras (RLC) y repuesto de impresoras. (RI).
+
+DADO que el empleado llenó el formulario CUANDO registre un prodcuto exactamente igual en todos los campos
+execepto el stock 
+ENTONCES el sistema solo identifica el producto y aumenta lo del stock o no aumenta si lo deja vacío

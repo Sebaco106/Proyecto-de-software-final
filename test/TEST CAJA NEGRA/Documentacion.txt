@@ -1,0 +1,16 @@
+Explicación de las Pruebas
+
+Prueba de Conexión Inicial:
+
+-Verifica que la API responde correctamente en la ruta raíz (/).
+-Comprueba que el estado de la respuesta sea 200 y el mensaje de respuesta sea "I am alive EmployeesAPI".
+
+-Prueba de Valor Límite:
+
+-Verifica el comportamiento de la API al enviar un dni con el valor límite inferior válido (8 dígitos).
+-Comprueba que el estado de la respuesta sea 201 y los datos del empleado se devuelvan correctamente.
+
+Prueba de Comprobación de Errores:
+
+-Simula un error en la base de datos y verifica que la API maneje el error correctamente.
+-Comprueba que el estado de la respuesta sea 500 en caso de error en la base de datos.
