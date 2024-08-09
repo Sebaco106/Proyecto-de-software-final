@@ -33,7 +33,7 @@ app.post('/employees', async (req, res) => {
   }
 });
 
-describe('Empleados API', () => {
+describe('Empleados API', () => {     //verificamos que el server este activo
   it('should return status 200 on GET /', async () => {
     const response = await request(app).get('/');
     expect(response.statusCode).toBe(200);
@@ -45,7 +45,7 @@ describe('Empleados API', () => {
       apellidoPaterno: 'García',
       apellidoMaterno: 'López',
       nombres: 'Juan',
-      dni: '12345678',            //aqui el valor limite inferior limite de 8 digitos
+      dni: '12345678',            //aqui el valor limite inferior del valor limite de 8 digitos
       telefono: '987654321',
       direccion: 'Calle belaunde 123',
       correo: 'juan.garcia@example.com'

@@ -1,3 +1,6 @@
+/*para este caso de las pruebas de caja negra doy inicio para evaluar la funcionalidad de la API
+sin tomar en cuenta la implementacion interna
+*/
 const request = require('supertest');
 const express = require('express');
 const cors = require('cors');
@@ -9,14 +12,14 @@ app.use(cors({
   origin: "*",
   methods: ["POST"]
 }));
-
+//punto para ver si esta activo el servidor
 app.get('/', (req, res) => {
   res.send("I am alive Producto");
 });
 
 app.get('/productos', async (req, res) => {
   try {
-    const productos = [];
+    const productos = [];     //Se devuelve el producto del caso real en este caso los casos de uso
     res.json(productos);
   } catch (error) {
     res.status(500).send(error);    //manejo de errores y devuelvo del estado
@@ -32,7 +35,9 @@ app.post('/productos', async (req, res) => {
     res.status(400).send(error);    //manejo de los errores
   }
 });
-
+/*aqui estamos verificando la conexion si esta activo (prueba de correcion de errores)
+Verificamos el POST
+*/
 describe('Productos API', () => {
   it('should return status 200 on GET /', async () => {
     const response = await request(app).get('/');
@@ -53,7 +58,8 @@ describe('Productos API', () => {
     expect(response.statusCode).toBe(201);    //verificamos la respuesta de 201
     expect(response.body).toEqual(productData);   //verificacion de errores con los datos enviados
   });
-
+/*verifica la conexion a la base de datos el GET
+*/
   it('should return status 500 on GET /productos when error occurs', async () => {
     const originalFind = productoModel.find;
     productoModel.find = jest.fn().mockRejectedValue(new Error('Database error'));
